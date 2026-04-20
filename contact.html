@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MISSION | AMK 포트폴리오 - 고윤호</title>
+    <title>CONTACT | AMK 포트폴리오 - 고윤호</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="bg-wrapper"></div>
-    
-    <!-- Top Navigation -->
     <nav class="navbar" id="navbar">
         <div class="logo">PORTFOLIO<span class="brand-highlight">.AMK</span></div>
         <div class="hamburger" id="hamburger">
@@ -27,31 +25,37 @@
             <li><a href="contact.html" class="nav-link">CONTACT</a></li>
         </ul>
     </nav>
-
-    <!-- FSM Indicator -->
     <div id="fsm-indicator">
         <div class="fsm-dot"></div>
         <span id="fsm-text">현재 상태: IDLE / 대기 중</span>
     </div>
-
-    <!-- Main Content -->
     <main class="main-content">
-        <!-- SECTION 1: MISSION -->
-        <section id="mission" class="section-container" style="min-height: calc(100vh - 200px); display: flex; align-items: center; justify-content: center;">
-            <div class="vision-container">
-                <h1 class="headline giant-headline">Atomic Precision Technician GYH</h1>
-                <div class="value-alignment sub-headline">
-                    AMK 장비의 무결성을 위해 0.1%의 오차도 허용하지 않는 유지 보수 엔지니어 고윤호입니다.
-                </div>
+        <section class="section-container">
+            <h2 class="section-title">CONTACT</h2>
+            <div class="contact-form-wrapper">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="contact-name">성명</label>
+                        <input type="text" id="contact-name" class="contact-input" placeholder="성명을 입력하세요" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">이메일 주소</label>
+                        <input type="email" id="contact-email" class="contact-input" placeholder="이메일 주소를 입력하세요" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">문의 내용</label>
+                        <textarea id="contact-message" class="contact-input" rows="5" placeholder="문의하실 내용을 상세히 적어주세요" required></textarea>
+                    </div>
+                    <div style="text-align: right;">
+                        <button type="submit" class="btn-submit-contact">메시지 전송</button>
+                    </div>
+                </form>
             </div>
         </section>
     </main>
-
-    <!-- Footer -->
     <footer>
         <div class="slogan">Applied Materials와 함께 무결성 0%에 도전합니다</div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
