@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     + commentsHTML
                     + '<div style="display:flex;justify-content:flex-end;gap:10px;margin-top:12px;">'
                     + '<button class="btn-like-fb" data-id="' + p.id + '" style="border:1px solid #00F2FF;background:' + (isLiked ? '#00F2FF' : 'transparent') + ';color:' + (isLiked ? '#000' : '#00F2FF') + ';padding:5px 15px;border-radius:20px;cursor:pointer;">추천 ' + (p.likes || 0) + '</button>'
+                    + '<button class="btn-edit-fb" data-id="' + p.id + '" style="border:none;background:transparent;color:var(--color-cyber-blue);cursor:pointer;">수정</button>'
                     + '<button class="btn-delete-fb" data-id="' + p.id + '" style="border:none;background:transparent;color:#FF0000;cursor:pointer;">삭제</button>'
                     + '</div>'
                     + '<div style="display:flex;gap:8px;margin-top:10px;">'
@@ -117,6 +118,29 @@ document.addEventListener('DOMContentLoaded', () => {
                     db.ref('posts/' + id + '/likes').transaction(l => (l || 0) + 1);
                     likedArr.push(id);
                     localStorage.setItem('amk_liked', JSON.stringify(likedArr));
+                });
+            });
+
+            // 수정 버튼
+            container.querySelectorAll('.btn-edit-fb').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.getAttribute('data-id');
+                    const pw = prompt('비밀번호를 입력하세요:');
+                    if (!pw) return;
+                    postsRef.child(id).once('value', s => {
+                        const post = s.val();
+                        if (post && post.password === pw) {
+                            const newContent = prompt('수정할 내용을 입력하세요:', post.content);
+                            if (newContent && newContent.trim() !== "") {
+                                db.ref('posts/' + id).update({
+                                    content: newContent.trim(),
+                                    date: new Date().toLocaleString() + ' (수정됨)'
+                                });
+                            }
+                        } else {
+                            alert('비밀번호가 일치하지 않습니다.');
+                        }
+                    });
                 });
             });
 
