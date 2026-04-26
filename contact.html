@@ -11,18 +11,14 @@
     <div class="bg-wrapper"></div>
     <nav class="navbar" id="navbar">
         <div class="logo">PORTFOLIO<span class="brand-highlight">.AMK</span></div>
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
         <ul class="nav-links" id="nav-links">
-            <li><a href="index.html" class="nav-link">MISSION</a></li>
-            <li><a href="challenger.html" class="nav-link">CHALLENGER</a></li>
-            <li><a href="technical-arsenal.html" class="nav-link">TECHNICAL ARSENAL</a></li>
-            <li><a href="project.html" class="nav-link">PROJECT</a></li>
-            <li><a href="community.html" class="nav-link">COMMUNITY</a></li>
-            <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+            <li><a href="index.html" class="nav-link">엔지니어 비전</a></li>
+            <li><a href="challenger.html" class="nav-link">도전과 성장</a></li>
+            <li><a href="technical-arsenal.html" class="nav-link">기술 역량</a></li>
+            <li><a href="project.html" class="nav-link">실무 프로젝트</a></li>
+            <li><a href="community.html" class="nav-link">기술 커뮤니티</a></li>
+            <li><a href="contact.html" class="nav-link active">문의하기</a></li>
         </ul>
     </nav>
     <div id="fsm-indicator">
@@ -31,30 +27,63 @@
     </div>
     <main class="main-content">
         <section class="section-container">
-            <h2 class="section-title">CONTACT</h2>
-            <div class="contact-form-wrapper">
-                <form id="contact-form">
-                    <div class="form-group">
-                        <label for="contact-name">성명</label>
-                        <input type="text" id="contact-name" class="contact-input" placeholder="성명을 입력하세요" required>
+            <h2 class="section-title">DIRECT CHANNEL <span class="text-silver" style="font-size:0.5em; vertical-align:middle;">문의하기</span></h2>
+            
+            <p class="page-description text-silver">
+                프로젝트 제안, 채용 문의 등 모든 연락을 환영합니다. 아래 폼을 통해 이메일을 보내주시거나 직접 연락처로 문의해 주세요.
+            </p>
+
+            <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 50px;">
+                
+                <div class="contact-form-wrapper" style="width: 100%;">
+                    <form action="https://formsubmit.co/1208gyh@gmail.com" method="POST" id="contact-form">
+                        <!-- 보안용: 스팸 방지 및 캡챠 -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="name" style="color: var(--color-silver);">이름</label>
+                            <input type="text" id="name" name="name" class="contact-input" placeholder="이름을 입력하세요" required>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="email" style="color: var(--color-silver);">이메일</label>
+                            <input type="email" id="email" name="_replyto" class="contact-input" placeholder="이메일을 입력하세요" required>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="message" style="color: var(--color-silver);">문의 내용</label>
+                            <textarea id="message" name="message" rows="5" class="contact-input" placeholder="문의 사항을 작성해주세요..." required></textarea>
+                        </div>
+                        
+                        <p style="margin-bottom: 15px; font-size: 0.9rem; color: var(--color-silver); text-align: center;">
+                            <i class="fas fa-info-circle text-cyber"></i> 문의사항 작성 후 전송 시 저의 메일로 전송됩니다.
+                        </p>
+
+                        <button type="submit" class="btn-submit-contact" style="width: 100%;">메시지 전송하기</button>
+                    </form>
+                </div>
+
+                <div class="contact-info" style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; text-align: center; border-top: 1px dashed rgba(0,242,255,0.3); padding-top: 40px;">
+                    <div style="font-size: 1.1rem; display: flex; flex-direction: column; gap: 10px; align-items: center;">
+                        <i class="fas fa-envelope text-cyber" style="font-size: 2rem;"></i>
+                        <span class="text-white">1208gyh@gmail.com</span>
                     </div>
-                    <div class="form-group">
-                        <label for="contact-email">이메일 주소</label>
-                        <input type="email" id="contact-email" class="contact-input" placeholder="이메일 주소를 입력하세요" required>
+                    <div style="font-size: 1.1rem; display: flex; flex-direction: column; gap: 10px; align-items: center;">
+                        <i class="fas fa-phone-alt text-cyber" style="font-size: 2rem;"></i>
+                        <span class="text-white">010-6494-5540</span>
                     </div>
-                    <div class="form-group">
-                        <label for="contact-message">문의 내용</label>
-                        <textarea id="contact-message" class="contact-input" rows="5" placeholder="문의하실 내용을 상세히 적어주세요" required></textarea>
+                    <div style="font-size: 1.1rem; display: flex; flex-direction: column; gap: 10px; align-items: center;">
+                        <i class="fab fa-github text-cyber" style="font-size: 2rem;"></i>
+                        <span class="text-white">github.com/royHouse721</span>
                     </div>
-                    <div style="text-align: right;">
-                        <button type="submit" class="btn-submit-contact">메시지 전송</button>
-                    </div>
-                </form>
+                </div>
+
             </div>
         </section>
     </main>
     <footer>
         <div class="slogan">Applied Materials와 함께 무결성 0%에 도전합니다</div>
+        <div class="copyright">
+            &copy; 2026 Yunho Ko. All Rights Reserved. <br>
+            <span>※ 본 사이트는 Applied Materials 입사용 포트폴리오 목적으로 제작되었습니다.</span>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>

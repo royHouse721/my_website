@@ -4,25 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROJECT | AMK 포트폴리오 - 고윤호</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?bypassCache=1">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="bg-wrapper"></div>
     <nav class="navbar" id="navbar">
         <div class="logo">PORTFOLIO<span class="brand-highlight">.AMK</span></div>
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
         <ul class="nav-links" id="nav-links">
-            <li><a href="index.html" class="nav-link">MISSION</a></li>
-            <li><a href="challenger.html" class="nav-link">CHALLENGER</a></li>
-            <li><a href="technical-arsenal.html" class="nav-link">TECHNICAL ARSENAL</a></li>
-            <li><a href="project.html" class="nav-link">PROJECT</a></li>
-            <li><a href="community.html" class="nav-link">COMMUNITY</a></li>
-            <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+            <li><a href="index.html" class="nav-link">엔지니어 비전</a></li>
+            <li><a href="challenger.html" class="nav-link">도전과 성장</a></li>
+            <li><a href="technical-arsenal.html" class="nav-link">기술 역량</a></li>
+            <li><a href="project.html" class="nav-link active">실무 프로젝트</a></li>
+            <li><a href="community.html" class="nav-link">기술 커뮤니티</a></li>
+            <li><a href="contact.html" class="nav-link">문의하기</a></li>
         </ul>
     </nav>
     <div id="fsm-indicator">
@@ -31,42 +27,92 @@
     </div>
     <main class="main-content">
         <section class="section-container">
-            <h2 class="section-title">PROJECT <span class="text-silver" style="font-size:0.5em; vertical-align:middle;">볼링매니아 로봇 3단계 프로토타입 개선</span></h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">Prototype 1</div>
-                    <div class="timeline-content">
-                        <h3 class="text-cyber">초기 설계 및 분석</h3>
-                        <div class="asset-container" style="max-width: 400px; margin: 15px 0;">
-                            <img src="images/robot_design.png" alt="Solidworks 설계 도면" class="technical-asset">
+            <h2 class="section-title">PROJECT <span class="text-silver" style="font-size:0.5em; vertical-align:middle;">창의적 공학설계 프로젝트</span></h2>
+            
+            <p class="page-description text-silver">
+                오토마타 및 델타 메커니즘 로봇 제작 과정과 설계 경험 분석
+            </p>
+
+            <div style="margin-bottom: 80px;">
+                <h3 style="color: var(--color-cyber-blue); font-size: 1.8rem; margin-bottom: 35px; border-bottom: 1px solid rgba(0, 242, 255, 0.3); padding-bottom: 15px;">PROJECT 1. 오토마타 제작 및 원리 분석</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Phase 1. 부품 분석 및 치수 측정</div>
+                        <div class="timeline-content">
+                            <h3 style="color: var(--color-cyber-blue); margin-bottom: 10px; font-weight: 800; letter-spacing: 1px;">부품별 정밀 치수 측정</h3>
+                            <p style="color: #B0C4DE;">제작할 오토마타에 사용하는 개별 부품들의 치수를 버니어 캘리퍼스 등의 공구를 사용하여 일일이 정밀하게 측정했습니다.</p>
                         </div>
-                        <p>Solidworks 설계 도면 기반 기구학적 모델링.</p>
-                        <p class="highlight-box">균형 유지 한계 분석 및 초기 프로토타입 개발 완료.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Phase 2. 3D 모델링 및 시뮬레이션</div>
+                        <div class="timeline-content">
+                            <h3 style="color: var(--color-cyber-blue); margin-bottom: 10px; font-weight: 800; letter-spacing: 1px;">CAD 프로그램 활용 도면 구현</h3>
+                            <div class="asset-container" style="max-width: 500px; margin: 15px 0; border: 1px solid rgba(0, 242, 255, 0.5); background: rgba(0,0,0,0.4); padding: 5px;">
+                                <img src="images/automata.png" alt="오토마타 CAD 3D 모델" style="width: 100%; display: block;" class="technical-asset">
+                            </div>
+                            <p style="color: #B0C4DE;">측정한 치수를 바탕으로 CAD 프로그램(설계 소프트웨어)을 이용해 부품들을 모델링한 뒤 가상의 환경에서 먼저 조립해 보며 문제점을 파악했습니다.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Phase 3. 실물 조립 및 완성</div>
+                        <div class="timeline-content">
+                            <h3 style="color: var(--color-cyber-blue); margin-bottom: 10px; font-weight: 800; letter-spacing: 1px;">실제 부품 결속 및 제작</h3>
+                            <p style="color: #B0C4DE;">성공적인 모델링 결과를 바탕으로, 실제로 오토마타 부품들을 가공하고 조립하여 최종적인 완성품을 제작했습니다.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Phase 4. 구동 원리 파악 및 발표</div>
+                        <div class="timeline-content">
+                            <h3 style="color: var(--color-cyber-blue); margin-bottom: 10px; font-weight: 800; letter-spacing: 1px;">메커니즘 분석 및 지식 공유</h3>
+                            <p style="color: #B0C4DE;">완성된 오토마타가 어떻게 유기적으로 동작하는지 그 구동 원리와 기계적 메커니즘을 파악하고 발표하며 지식을 공유했습니다.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">Prototype 2</div>
-                    <div class="timeline-content">
-                        <h3 class="text-cyber">기구부 정밀 보정</h3>
-                        <div class="asset-container" style="max-width: 400px; margin: 15px 0;">
-                            <img src="images/autocad_drawing.png" alt="Autocad 수정 도면" class="technical-asset">
+            </div>
+
+            <div>
+                <h3 style="color: var(--color-neon-red); font-size: 1.8rem; margin-bottom: 35px; border-bottom: 1px solid rgba(255, 0, 0, 0.3); padding-bottom: 15px;">PROJECT 2. 델타 메커니즘 적용 로봇 제작</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Phase 1. 기획 및 계획</div>
+                        <div class="timeline-content">
+                            <h3 style="color: var(--color-cyber-blue); margin-bottom: 10px; font-weight: 800; letter-spacing: 1px;">메커니즘 분석 및 자재 산출</h3>
+                            <p style="color: #B0C4DE;">어떤 공학적 원리 메커니즘을 적용할지 치열하게 고민하고 전체적인 설계 방향을 잡았습니다.</p>
+                            <p class="highlight-box">
+                                <span class="text-red font-weight-bold">로봇 몸체 고정 재료:</span> 3t 아크릴판 사용을 전제로 최적의 자재 수량을 계획했습니다.
+                            </p>
                         </div>
-                        <p>Autocad 베이스 수정 도면 설계 적용.</p>
-                        <p class="highlight-box"><span class="text-red font-weight-bold">기어 맞물림 오차 0mm 구현</span> 달성.</p>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">Prototype 3</div>
-                    <div class="timeline-content">
-                        <h3 class="text-cyber">최종 결속 및 최적화</h3>
-                        <div class="asset-container" style="max-width: 400px; margin: 15px 0;">
-                            <img src="images/bolt_nut_coupling.png" alt="볼트/너트 결속부" class="technical-asset">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Phase 2. 설계 및 실물 제작</div>
+                        <div class="timeline-content">
+                            <h3 style="color: var(--color-cyber-blue); margin-bottom: 10px; font-weight: 800; letter-spacing: 1px;">CAD 기반 모델링 및 부품 결속</h3>
+                            <div class="asset-container" style="max-width: 500px; margin: 15px 0; border: 1px solid rgba(0, 242, 255, 0.5); background: rgba(0,0,0,0.4); padding: 5px;">
+                                <img src="images/robot_cad.png" alt="로봇 아크릴 재단 CAD 도면" style="width: 100%; display: block;" class="technical-asset">
+                            </div>
+                            <p style="color: #B0C4DE;">결함 방지와 안정성을 위해 CAD 프로그램으로 도면과 3D 모델을 명시 시뮬레이션해보고, 설계된 수치에 맞춰 아크릴판을 절단해 로봇을 제작했습니다.</p>
                         </div>
-                        <p>실제 볼트/너트 결속 정밀 체결 사진 및 파츠 조립.</p>
-                        <p class="highlight-box">
-                            <span class="text-red font-weight-bold">기구적 강성 40% 향상</span> 및 
-                            <span class="text-red font-weight-bold">주행 성공률 100% 달성</span>!
-                        </p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Phase 3. 보완 및 성능 최적화</div>
+                        <div class="timeline-content">
+                            <h3 style="color: var(--color-cyber-blue); margin-bottom: 10px; font-weight: 800; letter-spacing: 1px;">시행착오를 통한 기구학적 문제 해결</h3>
+                            <div class="asset-container" style="max-width: 500px; margin: 15px 0; border: 1px solid rgba(0, 242, 255, 0.5); background: rgba(0,0,0,0.4); padding: 5px;">
+                                <img src="images/robot_final.png" alt="완성된 원리 메커니즘 로봇 실물" style="width: 100%; display: block;" class="technical-asset">
+                            </div>
+                            <p style="color: #B0C4DE;">초기 조립 시 발생하는 다양한 기구학적 문제점을 식별하고, 설계 및 구조 보완을 진행했습니다.</p>
+                            <p class="highlight-box">
+                                <span class="text-silver">문제를 찾아 보완하는 테스트를 도합 </span>
+                                <span class="text-red font-weight-bold">총 3~4회 반복</span><span class="text-silver">하여 로봇의 완성도와 구동성을 극대화했습니다.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Phase 4. 대회 참가 및 최종 발표</div>
+                        <div class="timeline-content">
+                            <h3 style="color: var(--color-cyber-blue); margin-bottom: 10px; font-weight: 800; letter-spacing: 1px;">로봇 경진대회 참가 및 성능 검증</h3>
+                            <p style="color: #B0C4DE;">완성된 로봇을 활용해 실제 오프라인 대회에 참가하여 스펙과 로봇의 완성도를 검증받았으며 설계부터 구현까지의 문제 해결 과정을 종합하여 최종 발표를 진행했습니다.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -74,6 +120,10 @@
     </main>
     <footer>
         <div class="slogan">Applied Materials와 함께 무결성 0%에 도전합니다</div>
+        <div class="copyright">
+            &copy; 2026 Yunho Ko. All Rights Reserved. <br>
+            <span>※ 본 사이트는 Applied Materials 입사용 포트폴리오 목적으로 제작되었습니다.</span>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>

@@ -8,50 +8,210 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- 오프닝 스플래시 -->
+    <div id="splash-screen" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:#000;z-index:9999;display:flex;justify-content:center;align-items:center;overflow:hidden;">
+        <canvas id="warp-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;"></canvas>
+        <div id="splash-text" style="position:relative;z-index:10000;font-family:'JetBrains Mono',monospace;font-size:1.4rem;color:#A0B0C0;opacity:0;letter-spacing:2px;text-align:center;padding:0 20px;"></div>
+    </div>
+
     <div class="bg-wrapper"></div>
     
-    <!-- Top Navigation -->
     <nav class="navbar" id="navbar">
         <div class="logo">PORTFOLIO<span class="brand-highlight">.AMK</span></div>
         <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </div>
         <ul class="nav-links" id="nav-links">
-            <li><a href="index.html" class="nav-link">MISSION</a></li>
-            <li><a href="challenger.html" class="nav-link">CHALLENGER</a></li>
-            <li><a href="technical-arsenal.html" class="nav-link">TECHNICAL ARSENAL</a></li>
-            <li><a href="project.html" class="nav-link">PROJECT</a></li>
-            <li><a href="community.html" class="nav-link">COMMUNITY</a></li>
-            <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+            <li><a href="index.html" class="nav-link active">엔지니어 비전</a></li>
+            <li><a href="challenger.html" class="nav-link">도전과 성장</a></li>
+            <li><a href="technical-arsenal.html" class="nav-link">기술 역량</a></li>
+            <li><a href="project.html" class="nav-link">실무 프로젝트</a></li>
+            <li><a href="community.html" class="nav-link">기술 커뮤니티</a></li>
+            <li><a href="contact.html" class="nav-link">문의하기</a></li>
         </ul>
     </nav>
-
-    <!-- FSM Indicator -->
     <div id="fsm-indicator">
         <div class="fsm-dot"></div>
         <span id="fsm-text">현재 상태: IDLE / 대기 중</span>
     </div>
-
-    <!-- Main Content -->
     <main class="main-content">
-        <!-- SECTION 1: MISSION -->
-        <section id="mission" class="section-container" style="min-height: calc(100vh - 200px); display: flex; align-items: center; justify-content: center;">
-            <div class="vision-container">
-                <h1 class="headline giant-headline">Atomic Precision Technician GYH</h1>
-                <div class="value-alignment sub-headline">
-                    AMK 장비의 무결성을 위해 0.1%의 오차도 허용하지 않는 유지 보수 엔지니어 고윤호입니다.
+        <section class="section-container">
+            <!-- 히어로 섹션: 화면 전체를 차지 -->
+            <div style="min-height:100vh;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;text-align:center;padding-top:18vh;">
+                <h2 style="font-size:2rem;font-weight:900;letter-spacing:0.05em;color:var(--color-white);text-shadow:0 0 15px var(--color-blue-glow);margin-bottom:30px;">ENGINEER VISION <span style="color:var(--color-silver);font-size:0.5em;vertical-align:middle;">엔지니어 비전</span></h2>
+                <div class="giant-headline">
+                    <span style="color:var(--color-neon-red);">무결성 0%</span>를 향한<br>반도체 장비 엔지니어 <span style="color:var(--color-cyber-blue)">고윤호</span>
+                </div>
+                <p class="sub-headline text-silver">
+                    FSM 기반 장비 제어설계부터 AI 기반 예방보전(DX)까지,<br>
+                    Applied Materials의 Uptime 극대화에 기여할 준비가 되어 있습니다.
+                </p>
+            </div>
+
+            <div style="margin-top: 80px;">
+                <h3 class="section-title" style="font-size:1.8rem;">Core Expertise Stack</h3>
+                <div class="bento-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:30px;">
+                    <div class="bento-item" style="border:1px solid rgba(0,123,255,0.2);background:rgba(0,11,30,0.85);padding:30px;position:relative;overflow:hidden;transition:all 0.3s;">
+                        <div class="bento-icon" style="font-size:2rem;color:var(--color-cyber-blue);margin-bottom:15px;"><i class="fas fa-microchip"></i></div>
+                        <div class="bento-content">
+                            <h3 style="color:var(--color-cyber-blue);margin-bottom:10px;font-size:1.1rem;">FSM 기반 장비 제어 아키텍처</h3>
+                            <p style="color:#B0C4DE;font-size:0.95rem;line-height:1.7;">반도체 장비의 복잡한 상태를 Entry / Run / Exit 구조로 설계하여 장비의 안정성을 확보하고, 예외 상황 발생 시 0.1초 내 즉각 대응 가능한 로직 설계 역량을 보유하고 있습니다.</p>
+                        </div>
+                    </div>
+                    <div class="bento-item" style="border:1px solid rgba(0,123,255,0.2);background:rgba(0,11,30,0.85);padding:30px;position:relative;overflow:hidden;transition:all 0.3s;">
+                        <div class="bento-icon" style="font-size:2rem;color:var(--color-cyber-blue);margin-bottom:15px;"><i class="fas fa-wave-square"></i></div>
+                        <div class="bento-content">
+                            <h3 style="color:var(--color-cyber-blue);margin-bottom:10px;font-size:1.1rem;">고정밀 회로 해석 및 디버깅</h3>
+                            <p style="color:#B0C4DE;font-size:0.95rem;line-height:1.7;">휘스톤 브리지 평형 해석, 메쉬/노드 해석법, 테브난 등가회로 변환법을 통해 복잡한 회로망의 신호 흐름을 분석하고 하드웨어 결함 부위를 정밀하게 디버깅합니다.</p>
+                        </div>
+                    </div>
+                    <div class="bento-item" style="border:1px solid rgba(0,123,255,0.2);background:rgba(0,11,30,0.85);padding:30px;position:relative;overflow:hidden;transition:all 0.3s;">
+                        <div class="bento-icon" style="font-size:2rem;color:var(--color-cyber-blue);margin-bottom:15px;"><i class="fas fa-cogs"></i></div>
+                        <div class="bento-content">
+                            <h3 style="color:var(--color-cyber-blue);margin-bottom:10px;font-size:1.1rem;">실전형 PLC &amp; 비차단 제어</h3>
+                            <p style="color:#B0C4DE;font-size:0.95rem;line-height:1.7;">GX WORKS2를 활용한 산업용 래더 다이어그램 작성과 millis() 기반의 비차단(Non-blocking) 제어 기술을 적용하여 시스템 지연 요소를 제거하고 가동률(Uptime)을 극대화합니다.</p>
+                        </div>
+                    </div>
+                    <div class="bento-item" style="border:1px solid rgba(0,123,255,0.2);background:rgba(0,11,30,0.85);padding:30px;position:relative;overflow:hidden;transition:all 0.3s;">
+                        <div class="bento-icon" style="font-size:2rem;color:var(--color-cyber-blue);margin-bottom:15px;"><i class="fas fa-brain"></i></div>
+                        <div class="bento-content">
+                            <h3 style="color:var(--color-cyber-blue);margin-bottom:10px;font-size:1.1rem;">AI 및 데이터 기반 예방 보전(DX)</h3>
+                            <p style="color:#B0C4DE;font-size:0.95rem;line-height:1.7;">Python과 구글 Colab을 활용한 머신러닝 모델링을 통해 장비의 이상 징후를 사전에 감지하고, 생성형 AI를 도구로 활용하여 유지 보수 효율을 높이는 차세대 DX 역량을 갖추고 있습니다.</p>
+                        </div>
+                    </div>
+                    <div class="bento-item align-right-col" style="border:1px solid rgba(0,123,255,0.2);background:rgba(0,11,30,0.85);padding:30px;position:relative;overflow:hidden;transition:all 0.3s;">
+                        <div class="bento-icon" style="font-size:2rem;color:var(--color-cyber-blue);margin-bottom:15px;"><i class="fas fa-robot"></i></div>
+                        <div class="bento-content">
+                            <h3 style="color:var(--color-cyber-blue);margin-bottom:10px;font-size:1.1rem;">로봇 기구학 및 벡터 해석</h3>
+                            <p style="color:#B0C4DE;font-size:0.95rem;line-height:1.7;">로봇의 움직임을 변위, 속도, 가속도의 벡터(Vector)량으로 정의하고 해석하여 0.1%의 오차도 허용하지 않는 무결성 기반의 정밀 유지 보수를 수행합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 80px;">
+                <h3 class="section-title" style="font-size:1.8rem;">Competency Data</h3>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:30px;">
+                    <!-- 캡스톤 디자인 -->
+                    <div style="border:1px solid rgba(0,123,255,0.2);background:rgba(0,11,30,0.85);padding:30px;transition:all 0.3s;">
+                        <div style="font-size:2rem;color:var(--color-cyber-blue);margin-bottom:15px;"><i class="fas fa-cog"></i></div>
+                        <h3 style="color:var(--color-cyber-blue);margin-bottom:15px;font-size:1.1rem;">캡스톤 디자인 현황</h3>
+                        <!-- Before / After 비교 차트 -->
+                        <div style="margin-bottom:15px;">
+                            <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:#A0B0C0;margin-bottom:4px;"><span>수정 전 기구강성</span><span>60%</span></div>
+                            <div style="background:rgba(255,255,255,0.08);height:8px;border-radius:4px;margin-bottom:6px;"><div style="background:#445566;width:60%;height:100%;border-radius:4px;"></div></div>
+                            <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:#00F2FF;margin-bottom:4px;"><span>수정 후 기구강성</span><span style="font-weight:bold;">100%</span></div>
+                            <div style="background:rgba(255,255,255,0.08);height:8px;border-radius:4px;margin-bottom:10px;"><div style="background:linear-gradient(90deg,#00F2FF,#007BFF);width:100%;height:100%;border-radius:4px;box-shadow:0 0 8px #00F2FF66;"></div></div>
+                            <div style="text-align:center;background:rgba(0,242,255,0.08);border:1px solid rgba(0,242,255,0.3);padding:6px;border-radius:4px;">
+                                <span style="color:#00F2FF;font-size:1.4rem;font-weight:900;">+40%</span>
+                                <span style="color:#A0B0C0;font-size:0.75rem;margin-left:6px;">기구적 강성 향상</span>
+                            </div>
+                        </div>
+                        <p style="color:#B0C4DE;font-size:0.88rem;line-height:1.6;">'볼링매니아' 프로젝트 수행 시 기어 맞물림 오차 분석 및 결합 방식 수정으로 기구적 강성 <strong style="color:#00F2FF;">40% 향상</strong>, 협업 능력의 기초를 다졌습니다.</p>
+                    </div>
+                    <!-- PLC -->
+                    <div style="border:1px solid rgba(0,123,255,0.2);background:rgba(0,11,30,0.85);padding:30px;transition:all 0.3s;">
+                        <div style="font-size:2rem;color:var(--color-cyber-blue);margin-bottom:15px;"><i class="fas fa-microchip"></i></div>
+                        <h3 style="color:var(--color-cyber-blue);margin-bottom:15px;font-size:1.1rem;">PLC와 장비 제어</h3>
+                        <!-- 다중 지표 바 차트 -->
+                        <div style="margin-bottom:15px;">
+                            <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:#A0B0C0;margin-bottom:4px;"><span>모듈화 구조 달성도</span><span style="color:#00F2FF;font-weight:bold;">90%</span></div>
+                            <div style="background:rgba(255,255,255,0.08);height:7px;border-radius:4px;margin-bottom:8px;"><div style="background:linear-gradient(90deg,#00F2FF,#007BFF);width:90%;height:100%;border-radius:4px;"></div></div>
+                            <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:#A0B0C0;margin-bottom:4px;"><span>로직 가독성 향상</span><span style="color:#00F2FF;font-weight:bold;">85%</span></div>
+                            <div style="background:rgba(255,255,255,0.08);height:7px;border-radius:4px;margin-bottom:8px;"><div style="background:linear-gradient(90deg,#00F2FF,#007BFF);width:85%;height:100%;border-radius:4px;"></div></div>
+                            <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:#A0B0C0;margin-bottom:4px;"><span>유지보수 대응속도</span><span style="color:#00F2FF;font-weight:bold;">80%</span></div>
+                            <div style="background:rgba(255,255,255,0.08);height:7px;border-radius:4px;margin-bottom:10px;"><div style="background:linear-gradient(90deg,#00F2FF,#007BFF);width:80%;height:100%;border-radius:4px;"></div></div>
+                        </div>
+                        <p style="color:#B0C4DE;font-size:0.88rem;line-height:1.6;">CALL/RET(서브루틴)·MC/MCR(마스터 컨트롤) 적용으로 프로그램 모듈화, 로직 가독성 향상 및 유지 보수 대응 속도를 개선했습니다.</p>
+                    </div>
+                    <!-- 글로벌 -->
+                    <div style="border:1px solid rgba(0,123,255,0.2);background:rgba(0,11,30,0.85);padding:30px;transition:all 0.3s;">
+                        <div style="font-size:2rem;color:var(--color-cyber-blue);margin-bottom:15px;"><i class="fas fa-globe"></i></div>
+                        <h3 style="color:var(--color-cyber-blue);margin-bottom:15px;font-size:1.1rem;">글로벌 기술 커뮤니케이션</h3>
+                        <!-- 단계별 진척도 -->
+                        <div style="margin-bottom:15px;">
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+                                <div style="width:28px;height:28px;border-radius:50%;background:var(--color-cyber-blue);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:bold;color:#000;flex-shrink:0;">1</div>
+                                <div style="flex:1;">
+                                    <div style="font-size:0.78rem;color:#00F2FF;margin-bottom:3px;">기술 매뉴얼 독해 <span style="color:#A0B0C0;font-size:0.7rem;">(진행중)</span></div>
+                                    <div style="background:rgba(255,255,255,0.08);height:5px;border-radius:3px;"><div style="background:#00F2FF;width:70%;height:100%;border-radius:3px;"></div></div>
+                                </div>
+                                <span style="color:#00F2FF;font-size:0.8rem;font-weight:bold;">70%</span>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+                                <div style="width:28px;height:28px;border-radius:50%;background:rgba(0,242,255,0.3);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:bold;color:#00F2FF;flex-shrink:0;">2</div>
+                                <div style="flex:1;">
+                                    <div style="font-size:0.78rem;color:#A0B0C0;margin-bottom:3px;">Toeic / OPIc 목표달성 <span style="font-size:0.7rem;">(준비중)</span></div>
+                                    <div style="background:rgba(255,255,255,0.08);height:5px;border-radius:3px;"><div style="background:#445566;width:30%;height:100%;border-radius:3px;"></div></div>
+                                </div>
+                                <span style="color:#A0B0C0;font-size:0.8rem;font-weight:bold;">30%</span>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:10px;">
+                                <div style="width:28px;height:28px;border-radius:50%;background:rgba(100,100,100,0.2);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:bold;color:#666;flex-shrink:0;">3</div>
+                                <div style="flex:1;">
+                                    <div style="font-size:0.78rem;color:#666;margin-bottom:3px;">글로벌 현장 커뮤니케이션</div>
+                                    <div style="background:rgba(255,255,255,0.08);height:5px;border-radius:3px;"><div style="background:#333;width:5%;height:100%;border-radius:3px;"></div></div>
+                                </div>
+                                <span style="color:#666;font-size:0.8rem;font-weight:bold;">목표</span>
+                            </div>
+                        </div>
+                        <p style="color:#B0C4DE;font-size:0.88rem;line-height:1.6;">AMK 글로벌 환경 대응을 위해 Toeic · OPIc AL/IH 목표로 영어 기술 매뉴얼 독해 능력을 향상시키고 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 반도체 특화 실무 수료 성과 -->
+            <div class="micro-degree-section" style="margin-top: 60px; max-width: 1000px; margin-left: auto; margin-right: auto;">
+                <details class="modern-details">
+                    <summary>반도체 특화 실무 수료 성과 (과정 펼쳐보기)</summary>
+                    <div class="details-content">
+                        <p class="details-desc">동양미래대학교 마이크로디그리 과정에서 이수중인 PLC 및 장비 S/W 실무 교육 과정의 데이터입니다.</p>
+                        <ul class="course-list">
+                            <li><span class="modern-badge badge-advanced">고급</span> 반도체설비설계</li>
+                            <li><span class="modern-badge badge-advanced">고급</span> 반도체장비S/W운용</li>
+                            <li><span class="modern-badge badge-intermediate">중급</span> 반도체설비유지보수</li>
+                            <li><span class="modern-badge badge-intermediate">중급</span> 반도체설비운용</li>
+                            <li><span class="modern-badge badge-intermediate">중급</span> 반도체장비제어</li>
+                            <li><span class="modern-badge badge-intermediate">중급</span> 반도체설비자동화</li>
+                            <li><span class="modern-badge badge-beginner">초급</span> 반도체공정 및 설비기초</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <!-- 참조 링크 섹션 -->
+            <div class="reference-links-section" style="margin-top: 100px; text-align: center; border-top: 1px dashed rgba(0,242,255,0.3); padding-top: 60px;">
+                <h3 style="color: var(--color-silver); font-size: 1.6rem; margin-bottom: 15px; text-transform: none; letter-spacing: 0;">"끊임없는 배움과 소통, 엔지니어 성장의 발판이 되는 연결고리입니다."</h3>
+                <p style="color: #6c7d8e; margin-bottom: 40px; font-size: 1.1rem;">항상 현장과 소통하며 전문성을 닦습니다. 저의 성장 기반이 되어주는 주요 채널들입니다.</p>
+                <style>
+                    .ref-btn:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,242,255,0.15); filter: brightness(1.2); }
+                </style>
+                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
+                    <a href="https://www.youtube.com/@auto2con" target="_blank" class="ref-btn" style="display:inline-flex;align-items:center;gap:10px;padding:15px 25px;border:1px solid var(--color-neon-red);color:var(--color-white);background:rgba(255,0,0,0.1);font-weight:800;border-radius:5px;transition:all 0.3s;text-decoration:none;">
+                        <i class="fab fa-youtube" style="color:var(--color-neon-red);font-size:1.3rem;"></i> 로봇자동화 유튜브
+                    </a>
+                    <a href="https://bootcamp.dongyang.ac.kr/" target="_blank" class="ref-btn" style="display:inline-flex;align-items:center;gap:10px;padding:15px 25px;border:1px solid var(--color-cyber-blue);color:var(--color-white);background:rgba(0,242,255,0.05);font-weight:800;border-radius:5px;transition:all 0.3s;text-decoration:none;">
+                        <i class="fas fa-laptop-code" style="color:var(--color-cyber-blue);font-size:1.3rem;"></i> 동양미래대 부트캠프
+                    </a>
+                    <a href="https://cafe.naver.com/dyrobot" target="_blank" class="ref-btn" style="display:inline-flex;align-items:center;gap:10px;padding:15px 25px;border:1px solid #03C75A;color:var(--color-white);background:rgba(3,199,90,0.05);font-weight:800;border-radius:5px;transition:all 0.3s;text-decoration:none;">
+                        <i class="fas fa-coffee" style="color:#03C75A;font-size:1.3rem;"></i> 로봇자동화 카페
+                    </a>
+                    <a href="https://www.dongyang.ac.kr/dmu/index.do" target="_blank" class="ref-btn" style="display:inline-flex;align-items:center;gap:10px;padding:15px 25px;border:1px solid var(--color-electric-blue);color:var(--color-white);background:rgba(0,123,255,0.1);font-weight:800;border-radius:5px;transition:all 0.3s;text-decoration:none;">
+                        <i class="fas fa-university" style="color:var(--color-electric-blue);font-size:1.3rem;"></i> 동양미래대학교 본교
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="slogan">Applied Materials와 함께 무결성 0%에 도전합니다</div>
+        <div class="copyright">
+            &copy; 2026 Yunho Ko. All Rights Reserved. <br>
+            <span>※ 본 사이트는 Applied Materials 입사용 포트폴리오 목적으로 제작되었습니다.</span>
+        </div>
     </footer>
-
     <script src="script.js"></script>
+    <script src="splash.js"></script>
 </body>
 </html>
